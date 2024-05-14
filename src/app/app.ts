@@ -1,9 +1,26 @@
-import express from "express"
-const app = express()
-const port = 3000
+import express, { Request, Response } from "express";
+const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+// middleware
+app.use(express.json())
+app.use(express.text())
+
+app.get("/", (req: Request, res: Response) => {
+  res.json(
+    {
+        message: "Server is running..."
+    }
+  );
+});
+
+
+app.post("/", (req: Request, res: Response) => {
+    console.log(req.body);
+    res.json(
+        {
+            message: "Api touch"
+        }
+    )
 })
 
 export default app;
