@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd --respawn src/app/server.ts"
+    "start": "nodemon dist/app/server.js"
   },
   "keywords": [],
   "author": "",
